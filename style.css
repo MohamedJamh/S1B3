@@ -1,0 +1,81 @@
+*, *::after,*::before {
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+}
+nav p{
+    display: inline;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 35px;
+    color: white;
+    background-color: black;
+    padding: 15px;
+    margin: 0px;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding-left: 0;
+    font-weight: bold;
+}
+ul li:hover{
+    text-decoration: underline;
+}
+.breadcrumb li+li::before{
+    content: "/\00a0";
+    padding: 15px;
+}
+.video-section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.video-card{
+    border: 2px solid grey;
+    padding: 5px;
+    margin: 20px 10px;
+    width: 230px;
+    height: max-content;
+}
+.video-card img {
+    width: 100%;
+}
+.card-body p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px;
+    font-weight: 400;
+}
+.card-body .card-details p:first-child{
+    color: grey;
+}
+.card-body .card-details p:nth-child(3){
+    color: green;
+}
+@media (min-width:1024px){
+    h1{
+        font-size: 40px;
+    }
+    nav{
+        flex-direction: row;
+        align-items: center;
+    }
+    nav ul li{
+        padding: 0 15px;
+        font-size: 25px;
+    }
+    .video-section , .breadcrumb{
+        justify-content: flex-start;
+    }
+    .breadcrumb{
+        margin-left: 20px;
+    }
+}
+@media print{
+    header,.breadcrumb{
+        display: none;
+    }
+}
